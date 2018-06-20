@@ -1,4 +1,4 @@
-# logs-a-lot Ovewview
+# logs-a-lot Overview
 
 Simple python script that logs a bunch of messages to the console.  Use to test logging, etc.
 
