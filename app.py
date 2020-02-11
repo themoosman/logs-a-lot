@@ -22,7 +22,8 @@ class BusyPod(object):
             date_fmt = '%m-%d-%Y %H:%M:%S'
             log_level = logging.INFO
             if "LOG_TO_FILE" in os.environ:
-                logging.basicConfig(filename='logsalot.log', format=log_fmt, datefmt=date_fmt, level=log_level)
+                log_path = os.environ.get('LOG_PATH', '/var/log/')
+                logging.basicConfig(filename=log_path + 'logs-a-lot.log', format=log_fmt, datefmt=date_fmt, level=log_level)
             else:
                 logging.basicConfig(format=log_fmt, datefmt=date_fmt, level=log_level)
 
