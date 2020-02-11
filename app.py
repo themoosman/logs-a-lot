@@ -21,9 +21,10 @@ class BusyPod(object):
             log_fmt = '%(message)s'
             date_fmt = '%m-%d-%Y %H:%M:%S'
             log_level = logging.INFO
-            #logging.basicConfig(format=log_fmt, level=log_level)
-            logging.basicConfig(format=log_fmt, datefmt=date_fmt, level=log_level)
-            #logging.basicConfig(format='%(message)s', datefmt='%m-%d-%Y %H:%M:%S', level=logging.INFO)
+            if "LOG_TO_FILE" in os.environ:
+                logging.basicConfig(filename='logsalot.log', format=log_fmt, datefmt=date_fmt, level=log_level)
+            else:
+                logging.basicConfig(format=log_fmt, datefmt=date_fmt, level=log_level)
 
             while True:
                 #datetime.datetime.now().strftime('%m-%d-%Y %H:%M:%S'),
