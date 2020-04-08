@@ -11,7 +11,7 @@ import string
 
 class BusyPod(object):
     '''A simple Python class that's only purpose is to generate a ton of useless messages.  
-       This can help deubgging logging systems.
+       This can help deubgging logging systems, in particular OpenShift and Splunk.
     '''
 
     def __init__(self):
